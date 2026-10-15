@@ -6,9 +6,9 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # --- 1. Donanım Mimari Bayrakları (STM32F103 - Cortex-M3) ---
-set(CPU_FLAGS "-mcpu=cortex-m3 -mthumb -msoft-float")
-add_compile_options(${CPU_FLAGS} -fdata-sections -ffunction-sections -Wall -Wextra)
-add_link_options(${CPU_FLAGS} -Wl,--gc-sections -nostartfiles)
+set(EXTRA_CPU_FLAGS -mcpu=cortex-m3 -mthumb -msoft-float)
+add_compile_options(${EXTRA_CPU_FLAGS} -fdata-sections -ffunction-sections -Wall -Wextra)
+add_link_options(${EXTRA_CPU_FLAGS} -Wl,--gc-sections -nostartfiles)
 
 # --- 2. libopencm3 Derleme Entegrasyonu ---
 set(OPENCM3_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/libopencm3)
